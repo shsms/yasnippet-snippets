@@ -2,7 +2,8 @@
 # name: func
 # key: func
 # --
-// $1 ${4:...}
-func ${1:name}(${2:args}) $3 {
+
+// $2 ${5:...}
+func${1:$(when (> (length yas-text) 0) " (")}$1${1:$(when (> (length yas-text) 0) ")")} ${2:name}(${3:args})${4:$(when (> (length yas-text) 0) " ")}${4:$(when (string-match-p "," yas-text) "(")}$4${4:$(when (string-match-p "," yas-text) ")")} {
   $0
 }
